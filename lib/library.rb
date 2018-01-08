@@ -78,7 +78,7 @@ class Library
  end
 
  def edit_account(id, username, password)
-   if !@@accounts.at(id).empty?
+   if !@@accounts.at(id).nil?
      @@accounts[id].person = @@people[id]
      edit_username_password(id, username, password)
      puts "Account with id = #{@@people[id].id} has been updated."
@@ -157,6 +157,7 @@ def add_book(author, title, premiere, age_restriction)
       @@rents.insert(id, rent)
       puts "New book rent has been added with id => #{@@rents[id].id}."
     else
+      puts "Such date format is not possible. Try YYYY/MM/DD." if !string.match(/\d{4}-\d{2}-\d{2}/)
       puts "Account with id => #{account_id} doesn't appear in database." if @@accounts[account_id].nil?
       puts "Book with id = #{book_id} doesn't appear in database." if @@books[book_id].nil?
       puts 'Adding a new entry has failed.'
