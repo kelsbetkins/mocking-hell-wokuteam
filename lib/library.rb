@@ -37,7 +37,7 @@ class Library
 
   def edit_person(id, firstname, lastname, country, age)
     if !@@people.at(id).nil?
-      insert_data_edit_person(id, firstname, lastname, country, age)
+      data_to_edit_person(id, firstname, lastname, country, age)
       puts "Person with id = #{@@people[id].id} has been updated."
     else
       puts "Person with id = #{id} doesn't appear in database."
@@ -120,7 +120,7 @@ def add_book(author, title, premiere, age_restriction)
 
  def edit_book(id, author, title, premiere, age_restriction)
    if !@@books.at(id).nil?
-     insert_data_edit_book(id, author, title, premiere, age_restriction)
+     data_to_edit_book(id, author, title, premiere, age_restriction)
      puts "Updated book on id = #{id}."
    else
      puts "Book with id = #{id} doesn't appear in database."

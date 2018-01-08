@@ -67,7 +67,7 @@ class Program
       login = gets.chomp
       puts 'Podaj haslo:'
       password = gets.chomp
-      @program.edit_account(id,login,password)
+      @program.edit_account(id.to_i,login,password)
     end
 
     def remove_user
@@ -93,7 +93,7 @@ class Program
       premiere = gets.chomp
       puts 'Podaj zakres wieku'
       age_restriction = gets.chomp
-      @program.edit_book(id,author,title, premiere, age_restriction)
+      @program.edit_book(id.to_i,author,title, premiere, age_restriction)
     end
 
     def remove_book
@@ -119,7 +119,7 @@ class Program
       country = gets.chomp
       puts 'Podaj wiek:'
       age = gets.chomp
-      @program.edit_person(id,firstname,lastname,country,age)
+      @program.edit_person(id.to_i,firstname,lastname,country,age)
     end
 
     def remove_person
