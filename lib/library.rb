@@ -5,7 +5,7 @@ class Library
  @@accounts= []
  @@books = []
  @@rents = []
- #------------------Person class--------------------
+ #---------------------------Person-----------------------------
  def show_person(id)
      if !@@people.at(id).nil?
        puts "Person with id = #{@@people[id].id}: #{@@people[id]}"
@@ -52,7 +52,7 @@ class Library
       puts "Person with id = #{id} doesn't appear in database."
     end
   end
-#---------------------Account class------------------------------
+#----------------------------Account-------------------------------
   def add_account(username, password, person)
    size = @@accounts.size
    id = 0
@@ -66,9 +66,9 @@ class Library
 
  def show_account(id)
    if !@@accounts.at(id).nil?
-     puts "Account on id = #{id}: #{@@accounts[id]}"
+     puts "Account with id = #{id}: #{@@accounts[id]}"
    else
-     puts "Account on id = #{id} doesn't appear in database."
+     puts "Account with id = #{id} doesn't appear in database."
    end
  end
 
@@ -81,9 +81,9 @@ class Library
    if !@@accounts.at(id).nil?
      @@accounts[id].person = @@people[id]
      edit_username_password(id, username, password)
-     puts "Updated account on id = #{id}."
+     puts "Account with id = #{@@people[id].id} has been updated."
    else
-     puts "Account on id = #{id} doesn't appear in database."
+     puts "Account with id = #{id} doesn't appear in database."
    end
  end
 
@@ -97,14 +97,13 @@ class Library
    end
  end
 #-----------------------Books---------------------------
-
 def add_book(author, title, premiere, age_restriction)
    size = @@books.size
    id = 0
    id += 1 while id < size && !@@books[id].nil?
    book = Book.new(id, author, title, premiere, age_restriction)
    @@books.insert(id, book)
-   puts "Added new workout:
+   puts "Added new book:
    id - #{id} ,
    author - #{author},
    title - #{title},
@@ -113,36 +112,39 @@ def add_book(author, title, premiere, age_restriction)
  end
 
  def data_to_edit_book(id, author, title, premiere, age_restriction)
-   @@books[id].date = date unless date.nil?
-   @@books[id].distance = distance if distance != ''
-   @@books[id].duration = duration if duration != ''
+   @@books[id].author = author unless author.nil?
+   @@books[id].title = title if title != ''
+   @@books[id].premiere = premiere if premiere != ''
+   @@books[id].age_restriction = age_restriction if age_restriction != ''
  end
 
- def edit_workout(id, date, distance, duration)
+ def edit_book(id, author, title, premiere, age_restriction)
    if !@@books.at(id).nil?
-     insert_data_edit_workout(id, date, distance, duration)
-     puts "Updated workout on id = #{id}."
+     insert_data_edit_book(id, author, title, premiere, age_restriction)
+     puts "Updated book on id = #{id}."
    else
-     puts "Workout on id = #{id} does not exist in database."
+     puts "Book with id = #{id} doesn't appear in database."
    end
  end
 
- def show_workout(id)
+ def show_book(id)
    if !@@books.at(id).nil?
-     puts "Workout on id = #{id}:
-     date = #{@@books[id].date} ,
-     distance = #{@@books[id].distance} ,
-     duration = #{@@books[id].duration}."
+     puts "Book with id = #{id}:
+     author = #{@@books[id].author} ,
+     title = #{@@books[id].title} ,
+     premiere = #{@@books[id].premiere}.
+     age restriction = #{@@books[id].age_restriction}."
    else
-     puts "Workout on id = #{id} does not exist in database."
+     puts "Book with id = #{id} doesn't appear in database."
    end
  end
 
- def remove_workout(id)
+ def remove_book(id)
    if !@@books.at(id).nil?
      @@books[id] = nil
-     puts "Removed workout on id = #{id}."
+     puts "Book with id = #{id} has been removed."
    else
-     puts "Workout on id = #{id} does not exist in database."
+     puts "Book with id = #{id} doesn't appear in database."
    end
  end
+#---------------------------Rent--------------------------
