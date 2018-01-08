@@ -19,39 +19,35 @@ class Program
 
     def menu
       puts '===!~~ Menu ~~!==='
-      puts '1 :: Uzytkownicy'
-      puts '2 :: Ksiazki'
-      puts '3 :: Osoby'
-      puts '4 :: Autorzy'
-      puts '5 :: Koniec'
+      puts '1.Uzytkownicy'
+      puts '2.Ksiazki'
+      puts '3.Osoby'
+      puts '4.Autorzy'
+      puts '5.Koniec'
     end
 
     def users_submenu
-      puts '    1 -> Pokaz szczegoly'
-      puts '    2 -> Edytuj uzytkownika'
-      puts '    3 -> Usun osobe'
+      puts '1::Pokaz szczegoly'
+      puts '2::Edytuj uzytkownika'
+      puts '3::Usun osobe'
     end
 
     def book_submenu
-      puts '    1 -> Pokaz szczegoly'
-      puts '    2 -> Edytuj ksiazke'
-      puts '    3 -> Usun ksiazke'
+      puts '1::Pokaz szczegoly'
+      puts '2::Edytuj ksiazke'
+      puts '3::Usun ksiazke'
     end
 
     def person_submenu
-      puts '    1 -> Pokaz szczegoly'
-      puts '    2 -> Edytuj osobe'
-      puts '    3 -> Usun osobe'
+      puts '1::Pokaz szczegoly'
+      puts '2::Edytuj osobe'
+      puts '3::Usun osobe'
     end
 
     def authors
       puts 'Autorzy:'
       puts 'Adrian Rybandt'
       puts 'Wiktor Przybylowski'
-    end
-
-    def next_step
-      puts 'Wybierz opcje: '
     end
 
     def command_not_found
@@ -62,8 +58,6 @@ class Program
       puts 'Wprowadz ID uzytkownika:'
       id = gets.chomp
       @program.show_account(id.to_i)
-      next_step
-      gets.chomp
     end
 
     def edit_user
@@ -74,72 +68,64 @@ class Program
       puts 'Podaj haslo:'
       password = gets.chomp
       @program.edit_account(id,login,password)
-      next_step
-      gets.chomp
     end
 
     def remove_user
       puts 'Wprowadz ID uzytkownika:'
       id = gets.chomp
       @program.remove_account(id.to_i)
-      next_step
-      gets.chomp
     end
 
     def show_book
       puts 'Wprowadz ID ksiazki:'
       id = gets.chomp
       @program.show_book(id.to_i)
-      next_step
-      gets.chomp
     end
 
     def edit_book
       puts 'Wprowadz ID ksiazki:'
       id = gets.chomp
-      puts 'Podaj nazwe:'
+      puts 'Podaj autora:'
       title = gets.chomp
       puts 'Podaj tytul:'
       author = gets.chomp
-      @program.edit_book(id,author,title)
-      next_step
-      gets.chomp
+      puts 'Podaj date wydania'
+      premiere = gets.chomp
+      puts 'Podaj zakres wieku'
+      age_restriction = gets.chomp
+      @program.edit_book(id,author,title, premiere, age_restriction)
     end
 
     def remove_book
       puts 'Wprowadz ID ksiazki:'
       id = gets.chomp
       @program.remove_book(id.to_i)
-      next_step
-      gets.chomp
     end
 
     def show_person
       puts 'Wprowadz ID osoby:'
       id = gets.chomp
       @program.show_person(id.to_i)
-      next_step
-      gets.chomp
     end
 
     def edit_person
       puts 'Wprowadz ID osoby:'
       id = gets.chomp
       puts 'Podaj imie:'
-      login = gets.chomp
+      firstname = gets.chomp
       puts 'Podaj nazwisko:'
-      password = gets.chomp
-      @program.edit_person(id,firstname,lastname)
-      next_step
-      gets.chomp
+      lastname = gets.chomp
+      puts 'Podaj kraj:'
+      country = gets.chomp
+      puts 'Podaj wiek:'
+      age = gets.chomp
+      @program.edit_person(id,firstname,lastname,country,age)
     end
 
     def remove_person
       puts 'Wprowadz ID osoby:'
       id = gets.chomp
       @program.remove_person(id.to_i)
-      next_step
-      gets.chomp
     end
 
     def menu_action
@@ -193,7 +179,6 @@ class Program
       puts ' '
       puts ' '
 
-      next_step
       break if input.chomp == '6'
     end
   end
