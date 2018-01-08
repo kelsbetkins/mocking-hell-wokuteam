@@ -2,7 +2,7 @@ require_relative 'person'
 require_relative 'account'
 require_relative 'book'
 require_relative 'rent'
-require_relative 'libary'
+require_relative 'library'
 
 class Program
 
@@ -216,5 +216,12 @@ class Program
     @@rent[0] = @program.add_rent(@@account[0], @@book[0], 2016-01-01, 2016-02-01, 0)
     @@rent[1] = @program.add_rent(@@account[1], @@book[1], 2013-02-06, 2013-05-07, 0)
   end
+
+ def start
+   create_person
+   create_account
+   create_book
+   create_rent
+ end
 
 end
