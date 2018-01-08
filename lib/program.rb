@@ -214,8 +214,8 @@ class Program
   end
 
   def create_rent
-    @@rent[0] = @program.add_rent(@@account[0], @@book[0], 2016-01-01, 2016-02-01, 0)
-    @@rent[1] = @program.add_rent(@@account[1], @@book[1], 2013-02-06, 2013-05-07, 0)
+    Rent.new(0,  @@account[0], @@book[0], 2016-01-01,2016-02-01, 0)
+    Rent.new(1,  @@account[1], @@book[1], 2013-05-07, 2013-06-01, 0)
   end
 
  def start
