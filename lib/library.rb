@@ -148,3 +148,36 @@ def add_book(author, title, premiere, age_restriction)
    end
  end
 #---------------------------Rent--------------------------
+  def add_rent(account_id, book_id)
+    max = @@rents.size
+    id = 0
+    id += 1 while id < max && !@@rents[id].nil?
+    if !@@accounts[account_id].nil? && !@@books[book_id].nil?
+      rent = Rent.new(id, @@accounts[account_id], @@books[book_id])
+      @@rents.insert(id, rent)
+      puts "New book rent has been added with id => #{@@rents[id].id}."
+    else
+      puts "Account with id => #{account_id} doesn't appear in database." if @@accounts[account_id].nil?
+      puts "Book with id = #{book_id} doesn't appear in database." if @@books[book_id].nil?
+      puts 'Adding a new entry has failed.'
+    end
+  end
+
+  def show_rent(id)
+    if !@@rents.at(id).nil?
+      puts "Rent with id => #{@@rents[id].id}: #{@@rents[id]}"
+    else
+      puts "Rent with id => #{id} doesn't appear in database."
+    end
+  end
+
+  def show_all_rents
+    puts 'Rents:'
+    i = 0
+    while i < @@rents.size
+      puts "Rent with id => #{@@rents[i].id}: #{@@rents[i]}" unless @@rents.at(i).nil?
+      i += 1
+    end
+  end
+
+end
