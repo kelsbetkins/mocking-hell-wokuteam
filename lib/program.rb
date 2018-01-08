@@ -2,12 +2,14 @@ require_relative 'person'
 require_relative 'account'
 require_relative 'book'
 require_relative 'rent'
+require_relative 'libary'
 
 class Program
 
     @@person = []
     @@account = []
     @@book = []
+    @@rent = []
 
     def initialize
       start
@@ -18,8 +20,9 @@ class Program
       puts '===!~~ Menu ~~!==='
       puts '1 :: Uzytkownicy'
       puts '2 :: Ksiazki'
-      puts '3 :: Autorzy'
-      puts '4 :: Koniec'
+      puts '3 :: Osoby'
+      puts '4 :: Autorzy'
+      puts '5 :: Koniec'
     end
 
     def users_submenu
@@ -34,6 +37,12 @@ class Program
       puts '    3 -> Usun ksiazke'
     end
 
+    def person_submenu
+      puts '    1 -> Pokaz szczegoly'
+      puts '    2 -> Edytuj osobe'
+      puts '    3 -> Usun osobe'
+    end
+
     def authors
       puts 'Autorzy:'
       puts 'Adrian Rybandt'
@@ -41,7 +50,7 @@ class Program
     end
 
     def next_step
-      puts 'Wybierz apcje: '
+      puts 'Wybierz opcje: '
     end
 
     def command_not_found
@@ -49,7 +58,7 @@ class Program
     end
 
     def show_user
-      puts 'Wprowadz ID osoby:'
+      puts 'Wprowadz ID uzytkownika:'
       id = gets.chomp
       @program.show_account(id.to_i)
       next_step
@@ -57,7 +66,7 @@ class Program
     end
 
     def edit_user
-      puts 'Wprowadz ID osoby:'
+      puts 'Wprowadz ID uzytkownika:'
       id = gets.chomp
       puts 'Podaj login:'
       login = gets.chomp
@@ -69,7 +78,7 @@ class Program
     end
 
     def remove_user
-      puts 'Wprowadz ID osoby:'
+      puts 'Wprowadz ID uzytkownika:'
       id = gets.chomp
       @program.remove_account(id.to_i)
       next_step
@@ -104,6 +113,34 @@ class Program
       gets.chomp
     end
 
+    def show_person
+      puts 'Wprowadz ID osoby:'
+      id = gets.chomp
+      @program.show_person(id.to_i)
+      next_step
+      gets.chomp
+    end
+
+    def edit_person
+      puts 'Wprowadz ID osoby:'
+      id = gets.chomp
+      puts 'Podaj imie:'
+      login = gets.chomp
+      puts 'Podaj nazwisko:'
+      password = gets.chomp
+      @program.edit_person(id,firstname,lastname)
+      next_step
+      gets.chomp
+    end
+
+    def remove_person
+      puts 'Wprowadz ID osoby:'
+      id = gets.chomp
+      @program.remove_person(id.to_i)
+      next_step
+      gets.chomp
+    end
+
     def menu_action
     loop do
       menu
@@ -134,8 +171,20 @@ class Program
           command_not_found
         end
       when '3'
-        authors
+        person_submenu
+        case gets.chomp
+        when '1'
+          show_person
+        when '2'
+          edit_person
+        when '3'
+          remove_person
+        else
+          command_not_found
+        end
       when '4'
+        authors
+      when '5'
         exit
       else
         command_not_found
@@ -144,7 +193,7 @@ class Program
       puts ' '
 
       next_step
-      break if input.chomp == '5'
+      break if input.chomp == '6'
     end
   end
 
@@ -159,9 +208,13 @@ class Program
   end
 
   def create_book
-    @@book[0] = @program.add_book('Peter V. Brett', 'Malowany Czlowiek', 2016-01-03, 0)
-    @@book[1] = @program.add_book('Norman Davies', 'Serce Europy', 2010-01-01, 0)
+    @@book[0] = @program.add_book('Peter V. Brett', 'Malowany Czlowiek', 2016-01-03, 18)
+    @@book[1] = @program.add_book('Norman Davies', 'Serce Europy', 2010-01-01, 8)
   end
 
+  def create_rent
+    @@rent[0] = @program.add_rent(@@account[0], @@book[0], 2016-01-01, 2016-02-01, 0)
+    @@rent[1] = @program.add_rent(@@account[1], @@book[1], 2013-02-06, 2013-05-07, 0)
+  end
 
 end
