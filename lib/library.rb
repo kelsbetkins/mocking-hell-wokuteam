@@ -24,7 +24,7 @@ class Library
     id - #{@@people[id].id},
     firstname - #{@@people[id].firstname},
     lastname - #{@@people[id].lastname},
-    country - #{@@people[id].country}.
+    country - #{@@people[id].country},
     age - #{@@people[id].age}"
   end
 
