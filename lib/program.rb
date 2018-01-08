@@ -12,6 +12,7 @@ class Program
     @@rent = []
 
     def initialize
+      @program = Library.new
       start
       menu_action
     end
