@@ -148,17 +148,18 @@ def add_book(author, title, premiere, age_restriction)
    end
  end
 #---------------------------Rent--------------------------
-  def add_rent(account_id, book_id)
+  def add_rent(account_id, book_id, date_away, date_back, fine)
     max = @@rents.size
     id = 0
     id += 1 while id < max && !@@rents[id].nil?
     if !@@accounts[account_id].nil? && !@@books[book_id].nil?
-      rent = Rent.new(id, @@accounts[account_id], @@books[book_id])
+      rent = Rent.new(id, @@accounts[account_id], @@books[book_id], date_away, date_back, fine)
       @@rents.insert(id, rent)
       puts "New book rent has been added with id => #{@@rents[id].id}."
     else
       puts "Account with id => #{account_id} doesn't appear in database." if @@accounts[account_id].nil?
       puts "Book with id = #{book_id} doesn't appear in database." if @@books[book_id].nil?
+      #puts "Such date format is not possible. Try DD/MM/YYYY." if !date_away.
       puts 'Adding a new entry has failed.'
     end
   end
