@@ -7,7 +7,7 @@ require_relative '../lib/rent.rb'
 RSpec.describe 'Library' do
   subject(:library) { Library.new }
 
-  desribe '#add_person' do
+  describe '#add_person' do
     it {
       firstname = 'Mikolaj'
       lastname = 'Rynko'
@@ -45,7 +45,7 @@ RSpec.describe 'Library' do
     }
   end
 
-  desribe '#edit_person' do
+  describe '#edit_person' do
     it {
       id = 0
       age = 17
@@ -128,7 +128,7 @@ RSpec.describe 'Library' do
       it { expect { library.remove_account(1) }.not_to raise_error }
     end
 
-    desribe '#add_book' do
+    describe '#add_book' do
       it {
         author = 'Mikolaj Kopernik'
         title = 'Zwierzeta slodko wodne'
@@ -146,7 +146,7 @@ RSpec.describe 'Library' do
       }
     end
 
-    desribe '#edit_book' do
+    describe '#edit_book' do
       it {
         id = 0
         title = 'Nowy tytul'

@@ -4,7 +4,7 @@ require relative '../lib/rent.rb'
 RSpec.describe 'Rent' do
   context '#new' do
     let(:id) { 1 }
-    let(:account) { double('Account', id: 1, username: 'czeslaw1', password: 'okon', double('Person', id: 1, firstname: 'Czeslaw', lastname: 'Test', country: 'Polska', age: '21')) }
+    let(:account) { double('Account', id: 1, username: 'czeslaw1', password: 'okon', person: double('Person', id: 1, firstname: 'Czeslaw', lastname: 'Test', country: 'Polska', age: '21')) }
     let(:book) { double('Book', id: 1, author: 'Peter V. Brett', title: 'Malowany Czlowiek', premiere: 2015-01-03, age_restriction: 18) }
     let(:date_away) { double('Date_away', date_away: 2016-01-01) }
     let(:date_back) { double('Date_back', date_back: 2016-02-01) }
