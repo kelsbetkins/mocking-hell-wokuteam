@@ -79,24 +79,24 @@ RSpec.describe 'Library' do
 
     describe '#add_account' do
     it {
-      login = 'kek123'
+      username = 'kek123'
       password = 'haslo'
       firstname = 'Alison'
       lastname = 'Jones'
       country = 'USA'
       age = 17
       person = double('Person', id: 0, firstname: firstname, lastname: lastname, country: country, age: age)
-      expect { library.add_account(login, password, person) }.not_to raise_error
+      expect { library.add_account(username, password, person) }.not_to raise_error
     }
     it {
-      login = 'dobrygracz'
+      username = 'dobrygracz'
       password = 'KasiaKochamCie'
       firstname = 'Robert'
       lastname = 'Pokrzywniak'
       country = 'Polska'
       age = 25
       person = double('Person', id: 1, firstname: firstname, lastname: lastname, country: country, age: age)
-      expect { library.add_account(login, password, person) }.not_to raise_error
+      expect { library.add_account(username, password, person) }.not_to raise_error
     }
     end
 
@@ -108,8 +108,8 @@ RSpec.describe 'Library' do
     describe '#edit_account' do
       it {
         id = 0
-        login = 'MaciusKochamCie'
-        expect { library.edit_account(id, login, '') }.not_to raise_error
+        username = 'MaciusKochamCie'
+        expect { library.edit_account(id, username, '') }.not_to raise_error
       }
       it {
         id = 1
@@ -118,9 +118,9 @@ RSpec.describe 'Library' do
       }
       it {
         id = 1
-        login = 'MBronk231'
+        username = 'MBronk231'
         password = 'Lelelele'
-        expect { library.edit_account(id, login, password) }.not_to raise_error
+        expect { library.edit_account(id, username, password) }.not_to raise_error
       }
     end
 
