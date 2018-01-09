@@ -106,6 +106,7 @@ RSpec.describe 'Library' do
     end
 
     describe '#edit_account' do
+      context 'when account found' do
       it {
         id = 1
         username = 'MaciusKochamCie'
