@@ -36,7 +36,7 @@ RSpec.describe  'Person' do
   it 'returns correct age' do
     expect(person.age).to eq(age)
   end
-
+end
   context '#to_s' do
     subject(:person) { Person.new 1, 'Czeslaw', 'Testowy', 'Polska', '21' }
 

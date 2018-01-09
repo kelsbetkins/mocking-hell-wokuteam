@@ -40,7 +40,7 @@ RSpec.describe  'Book' do
   it 'checks if author is made of letters' do
     expect(Book.check_if_no_digits? author).to eq(1)
   end
-
+end
   context '#to_s' do
     subject(:book) { Book.new 1, 'Jacek Piekara', 'Ja, Inkwizytor', Date.parse('2012-11-12') , '18' }
 

@@ -37,7 +37,7 @@ RSpec.describe  'Account' do
         expect(account.person).to be_a_kind_of(Person)
         expect(account.person.to_s).to be_a(String).and include(person.to_s)
       end
-
+    end
     context '#to_s' do
       let(:id) { 1 }
       let(:login) { double('Login', login: 'czeslaw1') }
@@ -48,6 +48,6 @@ RSpec.describe  'Account' do
       it 'returns correct output' do
         expect(account.to_s).to be_a(String).and include(login.to_s, pass.to_s, person.to_s)
     end
-    
+
     end
 end
