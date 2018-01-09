@@ -1,9 +1,9 @@
 require_relative '../lib/person.rb'
 
-RSpec.describe  'Person' do
+RSpec.describe 'Person' do
   context '#new' do
    let(:id) { 1 }
-   let(:fistname) {'Czeslaw'}
+   let(:firstname) {'Czeslaw'}
    let(:lastname) {'Testowy'}
    let(:country) {'Polska'}
    let(:age) {'21'}

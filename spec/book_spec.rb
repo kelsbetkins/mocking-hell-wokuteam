@@ -6,7 +6,7 @@ RSpec.describe  'Book' do
    let(:author) {'Jacek Piekara'}
    let(:title) {'Ja, Inkwizytor'}
    let(:premiere) {Date.parse('2012-11-12')}
-   let(:age_restriction) { 18 }
+   let(:age_restriction) { '18' }
    subject(:book) { Book.new id, author, title, premiere, age_restriction }
 
   it'adds a new book' do
