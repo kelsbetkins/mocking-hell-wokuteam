@@ -1,5 +1,5 @@
-require date
-require time
+require 'date'
+require 'time'
 
 class Rent
   attr_accessor :id, :account, :book, :date_away, :date_back, :fine
