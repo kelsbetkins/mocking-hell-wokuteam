@@ -14,7 +14,7 @@ group :test do
   gem 'rspec', '~> 3.7.0'
   gem 'rubocop', '~> 0.51.0', require: false
   gem 'simplecov', '~> 0.15.1', require: false
-  gem 'simplecov', :require => true, :group => :test
+  gem 'simplecov', :require => false, :group => :test
 
   # see https://github.com/codecov/example-ruby
   # gem 'codecov', :require => false, :group => :test
