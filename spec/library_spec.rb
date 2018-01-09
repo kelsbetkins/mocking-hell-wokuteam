@@ -94,6 +94,7 @@ RSpec.describe 'Library' do
       firstname = 'Robert'
       lastname = 'Pokrzywniak'
       country = 'Polska'
+      age = 25
       person = double('Person', id: 1, firstname: firstname, lastname: lastname, country: country, age: age)
       expect { library.add_account(login, password, person) }.not_to raise_error
     }
