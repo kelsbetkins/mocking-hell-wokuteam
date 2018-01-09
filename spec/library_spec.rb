@@ -108,11 +108,6 @@ RSpec.describe 'Library' do
     describe '#edit_account' do
       context 'when account found' do
       it {
-        id = 1
-        username = 'MaciusKochamCie'
-        expect { library.edit_account(id, username, '') }.not_to raise_error
-      }
-      it {
         id = 2
         password = 'Haselko'
         expect { library.edit_account(id, '', password) }.not_to raise_error

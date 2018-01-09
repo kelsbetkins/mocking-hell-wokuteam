@@ -1,5 +1,6 @@
 # Biblioteka
-mocking-hell-wokuteam created by GitHub Classroom
+Wypożyczalnia książek 
+
 <table>
 <td>  <b>Autorzy</b>     </td>
 <td>   <a href="https://github.com/mrwokulski"> Wiktor Przybyłowski</a>,
