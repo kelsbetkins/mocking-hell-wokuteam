@@ -14,6 +14,6 @@ class Rent
   end
 #  Time.now.strftime("%m/%d/%Y")
   def to_s
-    "#{account.username}; #{date_away} - #{date_back}; #{book.title} #{book.author}; #{fine}"
+    "#{account}; #{date_away} - #{date_back}; #{book.title} #{book.author}; #{fine}"
   end
 end
