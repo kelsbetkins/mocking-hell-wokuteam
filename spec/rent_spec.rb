@@ -2,7 +2,7 @@ require_relative '../lib/rent.rb'
 
 
 RSpec.describe 'Rent' do
-  context '#new' do
+  describe '#new' do
     let(:id) { 1 }
     let(:account) { double('Account', id: 1, username: 'czeslaw1', password: 'okon', person: double('Person', id: 1, firstname: 'Czeslaw', lastname: 'Test', country: 'Polska', age: '21')) }
     let(:book) { double('Book', id: 1, author: 'Peter V. Brett', title: 'Malowany Czlowiek', premiere: Date.parse('2015-01-03'), age_restriction: '18') }
@@ -46,7 +46,7 @@ RSpec.describe 'Rent' do
       expect(rent.date_back.to_s).to be_a(String).and include(date_back.to_s)
     end
   end
-  context '#to_s' do
+  describe '#to_s' do
     let(:id) { 1 }
     let(:account) { double('Account', id: 1, username: 'czeslaw1', password: 'okon', person: double('Person', id: 1, firstname: 'Czeslaw', lastname: 'Test', country: 'Polska', age: '21')) }
     let(:book) { double('Book', id: 1, author: 'Peter V. Brett', title: 'Malowany Czlowiek', premiere: Date.parse('2015-01-03'), age_restriction: '18') }

@@ -1,7 +1,7 @@
 require_relative '../lib/book.rb'
 
-RSpec.describe  'Book' do
-  context '#new' do
+RSpec.describe 'Book' do
+  describe '#new' do
    let(:id) { 1 }
    let(:author) {'Jacek Piekara'}
    let(:title) {'Ja, Inkwizytor'}
@@ -41,11 +41,11 @@ RSpec.describe  'Book' do
     expect(Book.check_if_no_digits? author).to eq(1)
   end
 end
-  context '#to_s' do
-    subject(:book) { Book.new 1, 'Jacek Piekara', 'Ja, Inkwizytor', Date.parse('2012-11-12') , '18' }
+  describe '#to_s' do
+    subject(:book) { Book.new 1, 'Jacek_Piekara', 'Ja Inkwizytor', Date.parse('2012-11-12') , '18' }
 
   it 'returns correct output' do
-    expect(book.to_s).to be_a(String).and include('Jacek Piekara Ja, Inkwizytor - premiere: 2012-11-12 PG: +18')
+    expect(book.to_s).to be_a(String).and include('Jacek_Piekara Ja_Inkwizytor 2012-11-12 18')
   end
 
   end

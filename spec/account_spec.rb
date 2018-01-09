@@ -1,7 +1,7 @@
 require_relative '../lib/account.rb'
 
 RSpec.describe  'Account' do
-    context '#new' do
+    describe '#new' do
       let(:id) { 1 }
       let(:username) { double('Username', username: 'czeslaw1') }
       let(:password) { double('Password', password: 'okon') }
@@ -38,7 +38,7 @@ RSpec.describe  'Account' do
         expect(account.person.to_s).to be_a(String).and include(person.to_s)
       end
     end
-    context '#to_s' do
+    describe '#to_s' do
       let(:id) { 1 }
       let(:username) { double('username', username: 'czeslaw1') }
       let(:password) { double('password', password: 'okon') }

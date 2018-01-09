@@ -1,7 +1,7 @@
 require_relative '../lib/person.rb'
 
 RSpec.describe 'Person' do
-  context '#new' do
+  describe '#new' do
    let(:id) { 1 }
    let(:firstname) {'Czeslaw'}
    let(:lastname) {'Testowy'}

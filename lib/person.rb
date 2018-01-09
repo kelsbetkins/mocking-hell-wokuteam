@@ -10,6 +10,6 @@ class Person
   end
 
   def to_s
-    "#{firstname} #{lastname} - #{country} - #{age}"
+    "#{firstname} #{lastname} #{country} #{age}"
   end
 end

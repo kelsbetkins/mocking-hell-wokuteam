@@ -10,6 +10,6 @@ class Book
   end
 
   def to_s
-    "#{author} #{title} - premiere: #{premiere} PG: +#{age_restriction}"
+    "#{author} #{title} #{premiere} #{age_restriction}"
   end
 end
