@@ -56,7 +56,7 @@ RSpec.describe 'Rent' do
     subject(:rent) { Rent.new id, account, book, date_away, date_back, fine }
 
     it 'returns correct output' do
-      expect(rent.to_s).to be_a(String).and include(account.to_s, book.to_s, date_away.to_s, date_back.to_s, fine.to_s)
+      expect(rent.to_s).to be_a(String).and include(account.username, book.to_s, date_away.to_s, date_back.to_s, fine.to_s)
     end
   end
 end

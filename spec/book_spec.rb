@@ -38,7 +38,7 @@ RSpec.describe 'Book' do
   end
 end
   describe '#to_s' do
-    subject(:book) { Book.new 1, 'Jacek_Piekara', 'Ja Inkwizytor', Date.parse('2012-11-12') , '18' }
+    subject(:book) { Book.new 1, 'Jacek_Piekara', 'Ja_Inkwizytor', Date.parse('2012-11-12') , '18' }
 
   it 'returns correct output' do
     expect(book.to_s).to be_a(String).and include('Jacek_Piekara Ja_Inkwizytor 2012-11-12 18')
