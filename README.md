@@ -1,6 +1,10 @@
-# mocking-hell-wokuteam
+# Biblioteka
 mocking-hell-wokuteam created by GitHub Classroom
-
+<table>
+<td>  <b>Autorzy</b>     </td>
+<td>   <a href="https://github.com/mrwokulski"> Wiktor Przybyłowski</a>, 
+<a href="https://github.com/AdrianRybandt"> Adrian Rybandt</a>,
+</td>  
 <tr>
 <td> <b>Travis Status</b> </td>
 <td> <a href="https://travis-ci.org/my-rspec/mocking-hell-wokuteam"> <img src="https://travis-ci.org/my-rspec/mocking-hell-wokuteam.svg?branch=master"></a> </td>
