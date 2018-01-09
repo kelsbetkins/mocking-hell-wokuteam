@@ -123,8 +123,8 @@ RSpec.describe 'Library' do
         password = 'Lelelele'
         expect { library.edit_account(id, username, password) }.not_to raise_error
       }
+      end
     end
-
     describe '#remove_account' do
       it { expect { library.remove_account(0) }.not_to raise_error }
       it { expect { library.remove_account(1) }.not_to raise_error }
