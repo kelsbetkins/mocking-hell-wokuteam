@@ -3,10 +3,10 @@ require_relative '../lib/account.rb'
 RSpec.describe  'Account' do
     context '#new' do
       let(:id) { 1 }
-      let(:login) { double('Login', login: 'czeslaw1') }
+      let(:username) { double('Username', username: 'czeslaw1') }
       let(:password) { double('Password', password: 'okon') }
       let(:person) { double('Person', id: 1, firstname: 'Czeslaw', lastname: 'Test', country: 'Polska', age: '21') }
-      subject(:account) { Account.new id, login, password, person }
+      subject(:account) { Account.new id, username, password, person }
 
       it 'creates a new account' do
         expect {account}.not_to raise_error
@@ -21,14 +21,14 @@ RSpec.describe  'Account' do
         expect(account.id).to eq(id)
       end
 
-      it 'returns correct login' do
-        expect(account.login).to eq(login)
-        expect(account.login.to_s).to be_a(String).and include(login.to_s)
+      it 'returns correct username' do
+        expect(account.username).to eq(username)
+        expect(account.username.to_s).to be_a(String).and include(username.to_s)
       end
 
-      it 'returns correct pass' do
-        expect(account.pass).to eq(pass)
-        expect(account.pass.to_s).to be_a(String).and include(pass.to_s)
+      it 'returns correct password' do
+        expect(account.password).to eq(password)
+        expect(account.password.to_s).to be_a(String).and include(password.to_s)
       end
 
       it 'returns correct person' do
@@ -40,13 +40,13 @@ RSpec.describe  'Account' do
     end
     context '#to_s' do
       let(:id) { 1 }
-      let(:login) { double('Login', login: 'czeslaw1') }
-      let(:pass) { double('pass', pass: 'okon') }
+      let(:username) { double('username', username: 'czeslaw1') }
+      let(:password) { double('password', password: 'okon') }
       let(:person) { double('Person', id: 1, name: 'Czeslaw', lastname: 'Test', country: 'Polska') }
-      subject(:account) { Account.new id, login, pass, person }
+      subject(:account) { Account.new id, username, password, person }
 
       it 'returns correct output' do
-        expect(account.to_s).to be_a(String).and include(login.to_s, pass.to_s, person.to_s)
+        expect(account.to_s).to be_a(String).and include(username.to_s, password.to_s, person.to_s)
     end
 
     end

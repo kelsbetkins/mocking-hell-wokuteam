@@ -37,11 +37,11 @@ RSpec.describe 'Person' do
     expect(person.age).to eq(age)
   end
 end
-  context '#to_s' do
-    subject(:person) { Person.new 1, 'Czeslaw', 'Testowy', 'Polska', '21' }
+  describe '#to_s' do
+    subject(:person) { Person.new 1, 'Czeslaw', 'Testowy', 'Polska', 21 }
 
     it 'returns correct output' do
-      expect(person.to_s).to be_a(String).and include('Czeslaw Testowy Polska')
+      expect(person.to_s).to be_a(String).and include('Czeslaw Testowy Polska 21')
   end
 
   end
