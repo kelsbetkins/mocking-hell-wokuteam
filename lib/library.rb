@@ -1,5 +1,5 @@
 class Library
-  attr_accessor :people, :accounts, :books, :rents
+  attr_accessor :id, :people, :accounts, :books, :rents
 
  @@people = []
  @@accounts= []
