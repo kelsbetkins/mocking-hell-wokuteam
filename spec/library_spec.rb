@@ -149,12 +149,12 @@ RSpec.describe 'Library' do
 
     describe '#edit_book' do
       it {
-        id = 0
+        id = 1
         title = 'Nowy tytul'
-        expect {library.edit_book(id,'',title,'','')}.not_to raise raise_error
+        expect {library.edit_book(id,'',title,'','')}.not_to raise_error
       }
       it {
-          id = 0
+          id = 1
           author = 'Nowy autor'
           age_restriction = 13
           expect { library.edit_book(id, author, '','',age_restriction) }.not_to raise_error
