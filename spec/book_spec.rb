@@ -36,13 +36,9 @@ RSpec.describe 'Book' do
   it 'returns correct age restriction' do
     expect(book.age_restriction).to eq(age_restriction)
   end
-
-  it 'checks if author is made of letters' do
-    expect(Book.check_if_no_digits? author).to eq(1)
-  end
 end
   describe '#to_s' do
-    subject(:book) { Book.new 1, 'Jacek_Piekara', 'Ja Inkwizytor', Date.parse('2012-11-12') , '18' }
+    subject(:book) { Book.new 1, 'Jacek_Piekara', 'Ja_Inkwizytor', Date.parse('2012-11-12') , '18' }
 
   it 'returns correct output' do
     expect(book.to_s).to be_a(String).and include('Jacek_Piekara Ja_Inkwizytor 2012-11-12 18')

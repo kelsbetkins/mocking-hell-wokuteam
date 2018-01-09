@@ -1,5 +1,7 @@
+require 'date'
+
 class Book
-  attr_accessor :author, :title, :premiere, :age_restriction
+  attr_accessor :id, :author, :title, :premiere, :age_restriction
 
   def initialize(id, author, title, premiere, age_restriction)
     @id = id
