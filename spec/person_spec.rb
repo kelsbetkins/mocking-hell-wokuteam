@@ -42,7 +42,7 @@ end
 
     it 'returns correct output' do
       expect(person.to_s).to be_a(String).and include('Czeslaw Testowy Polska 21')
-  end
+    end
 
   end
 end

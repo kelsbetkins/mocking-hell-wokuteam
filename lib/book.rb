@@ -1,3 +1,5 @@
+require date
+
 class Book
   attr_accessor :author, :title, :premiere, :age_restriction
 
