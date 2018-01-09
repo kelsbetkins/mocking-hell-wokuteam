@@ -107,17 +107,17 @@ RSpec.describe 'Library' do
 
     describe '#edit_account' do
       it {
-        id = 0
+        id = 1
         username = 'MaciusKochamCie'
         expect { library.edit_account(id, username, '') }.not_to raise_error
       }
       it {
-        id = 1
+        id = 2
         password = 'Haselko'
         expect { library.edit_account(id, '', password) }.not_to raise_error
       }
       it {
-        id = 1
+        id = 3
         username = 'MBronk231'
         password = 'Lelelele'
         expect { library.edit_account(id, username, password) }.not_to raise_error
