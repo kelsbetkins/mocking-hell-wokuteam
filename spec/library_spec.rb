@@ -49,7 +49,7 @@ RSpec.describe 'Library' do
     it {
       id = 0
       age = 17
-      expect {library.edit_person(id,'','','',age)}.not_to raise raise_error
+      expect {library.edit_person(id,'','','',age)}.not_to raise_error
     }
     it {
         id = 0
