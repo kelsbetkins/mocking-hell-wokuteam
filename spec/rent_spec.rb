@@ -1,4 +1,4 @@
-require relative '../lib/rent.rb'
+require_relative '../lib/rent.rb'
 
 
 RSpec.describe 'Rent' do

@@ -1,4 +1,4 @@
-require relative '../lib/book.rb'
+require_relative '../lib/book.rb'
 
 RSpec.describe  'Book' do
   context '#new' do

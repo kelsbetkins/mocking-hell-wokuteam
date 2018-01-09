@@ -1,4 +1,4 @@
-require relative '../lib/account.rb'
+require_relative '../lib/account.rb'
 
 RSpec.describe  'Account' do
     context '#new' do
