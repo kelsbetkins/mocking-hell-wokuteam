@@ -32,7 +32,7 @@ RSpec.describe 'Library' do
       lastname = 'Zwierzak'
       country = 'USA'
       age = 21
-      expect { library.data_to_edit_person(firstname, lastname, country, age)}.not_to raise_error
+      expect { library.data_to_edit_person(id, firstname, lastname, country, age)}.not_to raise_error
     }
 
     it {
@@ -41,7 +41,7 @@ RSpec.describe 'Library' do
       lastname = 'Nazwisko'
       country = 'Kraj'
       age = 67
-      expect { library.data_to_edit_person(firstname, lastname, country, age)}.not_to raise_error
+      expect { library.data_to_edit_person(id, firstname, lastname, country, age)}.not_to raise_error
     }
   end
 
@@ -49,7 +49,7 @@ RSpec.describe 'Library' do
     it {
       id = 0
       age = 17
-      expect {library.edit_person(id,'','','',age)}.not_to raise raise_error
+      expect {library.edit_person(id,'','','',age)}.not_to raise_error
     }
     it {
         id = 0
