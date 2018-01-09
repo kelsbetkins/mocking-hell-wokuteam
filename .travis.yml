@@ -6,13 +6,10 @@ script:
 
 env:
   global:
-    - CC_TEST_REPORTER_ID=fe3e776fa7d7a06e33a0a2d93f8ff77f35ea4591c1792c470fc892333ef62ca6
+    - CC_TEST_REPORTER_ID=302e8087f9240a80806b777892f8cbf4cd75b3b182985ffdd4b7e230cf83ebc1
 before_script:
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
   - ./cc-test-reporter before-build
 after_script:
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
-
-
-
