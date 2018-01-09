@@ -1,10 +1,11 @@
-# Biblioteka
+﻿# Biblioteka
 Wypożyczalnia książek 
 
 <table>
 <td>  <b>Autorzy</b>     </td>
 <td>   <a href="https://github.com/mrwokulski"> Wiktor Przybyłowski</a>,
 <a href="https://github.com/AdrianRybandt"> Adrian Rybandt</a>
+<a href="https://github.com/Mapiatko">Marcin Pehnke</a>
 </td>  
 <tr>
 <td> <b>Travis Status</b> </td>
