@@ -38,7 +38,7 @@ RSpec.describe 'Person' do
   end
 end
   describe '#to_s' do
-    subject(:person) { Person.new 1, 'Czeslaw', 'Testowy', 'Polska', 21 }
+    subject(:person) { Person.new 1, 'Czeslaw', 'Testowy', 'Polska', '21'}
 
     it 'returns correct output' do
       expect(person.to_s).to be_a(String).and include('Czeslaw Testowy Polska 21')
